@@ -14,10 +14,14 @@ public class GridCell_Neighborhood_Routine {
 	
 	public static void gridRoutine(int[] N, int[][] gridArray, int init_X_Value, int init_Y_Value) {
 		
+		//***Takes each value in the N Array and attempts to find the grid***************
+		//*******************************************************************************
 		for(int arrCount=0; arrCount<N.length;arrCount++) {
 			gridTask(N[arrCount], gridArray, init_X_Value, init_Y_Value);
 		}
 		
+		//******************************************************************************
+		//******************************************************************************
 		
 		
 	}
@@ -30,15 +34,19 @@ public class GridCell_Neighborhood_Routine {
 		int new_X_Value;
 		int new_X_Neg_Value;
 		int new_Y_Value;
-		
+
+		//***Looping the X Coordinates**************************************************
+		//******************************************************************************
 for(int x=0; x<=N;x++) {
 	
 
-	//new_X_Neg_Value = init_X_Value - x;
 	for(int y=0; y<=N-x;y++) {
+		
+		//***Loops thru the cells on the right of the grid**************************
+		//**************************************************************************
 		new_X_Value = init_X_Value + x;
 		new_Y_Value = init_Y_Value + y;
-		coord = "("+Integer.toString(new_X_Value)+","+Integer.toString(new_X_Value)+")";
+		coord = "("+Integer.toString(new_X_Value)+","+Integer.toString(new_Y_Value)+")";
 		if(!gridCount.contains(coord)) {
 			gridCount.add(coord);
 			if(gridArray[new_X_Value][new_Y_Value] >=0) {
@@ -47,7 +55,7 @@ for(int x=0; x<=N;x++) {
 			}
 		}
 		new_Y_Value = init_Y_Value - y;
-		coord = "("+Integer.toString(new_X_Value)+","+Integer.toString(new_X_Value)+")";
+		coord = "("+Integer.toString(new_X_Value)+","+Integer.toString(new_Y_Value)+")";
 		if(!gridCount.contains(coord)) {
 			gridCount.add(coord);
 			if(gridArray[new_X_Value][new_Y_Value] >=0) {
@@ -56,9 +64,11 @@ for(int x=0; x<=N;x++) {
 			}
 		}
 		
+		//***Loops thru the cells on the left of the grid**************************
+		//**************************************************************************
 		new_X_Value = init_X_Value - x;
 		new_Y_Value = init_Y_Value + y;
-		coord = "("+Integer.toString(new_X_Value)+","+Integer.toString(new_X_Value)+")";
+		coord = "("+Integer.toString(new_X_Value)+","+Integer.toString(new_Y_Value)+")";
 		if(!gridCount.contains(coord)) {
 			gridCount.add(coord);
 			if(gridArray[new_X_Value][new_Y_Value] >=0) {
@@ -67,7 +77,7 @@ for(int x=0; x<=N;x++) {
 			}
 		}
 		new_Y_Value = init_Y_Value - y;
-		coord = "("+Integer.toString(new_X_Value)+","+Integer.toString(new_X_Value)+")";
+		coord = "("+Integer.toString(new_X_Value)+","+Integer.toString(new_Y_Value)+")";
 		if(!gridCount.contains(coord)) {
 			gridCount.add(coord);
 			if(gridArray[new_X_Value][new_Y_Value] >=0) {
