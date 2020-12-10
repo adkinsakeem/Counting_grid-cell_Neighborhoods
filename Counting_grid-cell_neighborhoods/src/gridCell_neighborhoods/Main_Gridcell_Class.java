@@ -5,13 +5,12 @@ import java.util.Arrays;
 public class Main_Gridcell_Class {
 
 	public static void main(String[] args) {
-		int[] N = {3};
+		int N = 3;
 		int[][] gridArray = getArrayValues();	
-		int init_X_Value = 4;
-		int init_Y_Value = 5;
+		int[][] init_X_Y_Value = {{0,0}, {2,7}, {9,9}};
 		
 		//System.out.println(Arrays.deepToString(gridArray));
-		GridCell_Neighborhood_Routine.gridRoutine(N, gridArray, init_X_Value, init_Y_Value);
+		GridCell_Neighborhood_Routine.gridRoutine(N, gridArray, init_X_Y_Value);
 
 	}
 	
